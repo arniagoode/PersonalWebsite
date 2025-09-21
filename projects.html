@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects</title>
+  <link id="mainStyleSheet" rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="projects-page">
+
+  <div class="social-links">
+    <a href="https://www.linkedin.com/in/arniagoode/" class="fab fa-linkedin"></a>
+  </div>
+
+  <nav>
+    <a href="home.html" class="website-nav">Home</a>
+    <a href="resume.html" class="website-nav">Resume</a>
+    <a href="projects.html" class="website-nav">Projects</a>
+    <a href="presentations.html" class="website-nav">Presentations</a>
+  </nav>
+
+  <h1>Projects</h1>
+
+  <div class="projects-grid">
+    <!-- Project 1 -->
+    <div class="project-tile">
+      <img src="Images/heart2.png" alt="Project 1 Icon"
+           class="project-main-img" onclick="toggleProjectImage(this)">
+      <img src="Images/FatigueAppDetails.png" alt="Project 1 Detail"
+           class="project-detail-img" style="display:none;" onclick="toggleProjectImageBack(this)">
+      <div class="project-title">Physical Fatigue Monitoring App</div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-tile">
+      <img src="Images/balloon.jpg" alt="Project 2 Icon"
+           class="project-main-img" onclick="toggleProjectImage(this)">
+      <img src="Images/BalloonPayloadDetails.png" alt="Project 2 Detail"
+           class="project-detail-img" style="display:none;" onclick="toggleProjectImageBack(this)">
+      <div class="project-title">High-Altitude Balloon Payload</div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project-tile">
+      <img src="Images/SEAP.png" alt="Project 3 Icon"
+           class="project-main-img" onclick="toggleProjectImage(this)">
+      <img src="Images/SEAPDetails.png" alt="Project 3 Detail"
+           class="project-detail-img" style="display:none;" onclick="toggleProjectImageBack(this)">
+      <div class="project-title">Linear and Rotational Motor Controller</div>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="project-tile">
+      <img src="Images/FridayNightLightsIcon.png" alt="Project 4 Icon"
+           class="project-main-img" onclick="toggleProjectImage(this)">
+      <img src="Images/FridayNightLightsDetails.png" alt="Project 4 Detail"
+           class="project-detail-img" style="display:none;" onclick="toggleProjectImageBack(this)">
+      <div class="project-title">Friday Night Lights App</div>
+    </div>
+  </div>
+
+    <script>
+        function toggleProjectImage(iconElem) {
+        // Get the sibling detail image.
+        const projectTile = iconElem.closest('.project-tile');
+        const detailImg = projectTile.querySelector('.project-detail-img');
+
+        // Create fullscreen overlay
+        const overlay = document.createElement('div');
+        overlay.className = 'fullscreen-img-overlay';
+        // Clone the image node
+        const img = document.createElement('img');
+        img.src = detailImg.src;
+        img.alt = detailImg.alt;
+        // Click to close the overlay
+        overlay.onclick = function() {
+            document.body.classList.remove('fullscreen-open');
+            overlay.remove();
+        };
+        overlay.appendChild(img);
+
+        document.body.appendChild(overlay);
+        document.body.classList.add('fullscreen-open');
+        }
+    </script>
+
+</body>
+</html>

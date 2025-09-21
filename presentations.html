@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Presentations</title>
+        <link id="mainStyleSheet" rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </head>
+    <body>
+
+        <div class= "social-links">
+            <a href="https://www.linkedin.com/in/arniagoode/" class="fab fa-linkedin"></a>
+        </div>
+
+        <nav>
+            <a href="home.html", class="website-nav">Home</a>
+            <a href="resume.html", class="website-nav">Resume</a>
+            <a href="projects.html", class="website-nav">Projects</a>
+            <a href="presentations.html", class="website-nav">Presentations</a>
+        </nav>
+
+        <h1>Presentations</h1>
+
+        <div class="portfolio-container">
+            <div class="portfolio-project">
+                <div class="portfolio-img">
+                    <img src="Images/REUPosterPNG.png" alt="Project Image" onclick="expandImage(this)">
+                </div>
+                <div class="glass1"> Presented at the 2025 Texas A&M LAUNCH Symposium. Accepted to the 2026 Construction Research Congress in San Antonio, TX.
+                </div>
+            </div>
+            <div class="portfolio-project">
+                <div class="portfolio-img">
+                    <img src="Images/PhysicsPoster.jpg" alt="Project Image" onclick="expandImage(this)">
+                </div>
+                <div class="glass1">Presented at the 2025 Maryland Collegiate STEM Conference.
+                </div>
+            </div>
+            <div class="portfolio-project">
+                <div class="portfolio-img">
+                    <img src="Images/RockSat-XPoster.png" alt="Project Image" onclick="expandImage(this)">
+                </div>
+                <div class="glass1">Presented at the 2025 Anne Arundel Community College Research Day Symposium.
+                </div>
+            </div>
+        </div>
+        <script>
+            function expandImage(imgElem) {
+                if (!imgElem.classList.contains('expanded')) {
+                    imgElem.classList.add('expanded');
+                    document.body.style.overflow = 'hidden';
+                    imgElem.onclick = function() { shrinkImage(imgElem); };
+                }
+            }
+            function shrinkImage(imgElem) {
+                imgElem.classList.remove('expanded');
+                document.body.style.overflow = '';
+                imgElem.onclick = function() { expandImage(imgElem); };
+            }
+        </script>
+
+    </body>
+</html>
