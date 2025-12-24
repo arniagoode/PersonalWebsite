@@ -337,7 +337,7 @@ nav a {
 }
 @media (min-width: 651px) {
   body {
-    padding-top: 0;
+    padding-top: 40px;
   }
 }
 /* Custom crop focus for project images */
