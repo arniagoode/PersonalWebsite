@@ -335,6 +335,11 @@ nav a {
     max-width: 100%;
   }
 }
+@media (min-width: 651px) {
+  body {
+    padding-top: 0;
+  }
+}
 /* Custom crop focus for project images */
 .img-focus-top       { object-position: top center; }
 .img-focus-bottom    { object-position: bottom center; }
