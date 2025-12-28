@@ -61,13 +61,21 @@
     </div>
 
     <!-- Project 5 -->
-    <div class="project-tile">
-      <img src="Images/balloon.jpg" alt="Project 5 Icon"
-           class="project-main-img" onclick="toggleProjectImage(this)">
-      <img src="Images/BalloonPayloadDetails.png" alt="Project 5 Detail"
-           class="project-detail-img" style="display:none;" onclick="toggleProjectImageBack(this)">
-      <div class="project-title">High-Altitude Balloon Payload</div>
-    </div>
+     <div class="project-tile">
+       <img src="Images/balloon.jpg" alt="Project 5 Icon"
+          class="project-main-img" onclick="openProjectDetail(this)">
+
+     <!-- Detail images + arrow -->
+     <div class="project-detail-wrapper" style="display:none;">
+       <img src="Images/BalloonPayloadDetails.png" alt="Project 5 Detail 1"
+          class="project-detail-img active">
+       <img src="Images/Balloon Payload - Technical Details.png" alt="Project 5 Detail 2"
+          class="project-detail-img">
+     <!-- Arrow to go to next image -->
+       <button class="project-arrow" onclick="nextProjectImage(event, this)">›</button>
+     </div>
+          <div class="project-title">High-Altitude Balloon Payload</div>
+     </div>
 
     <!-- Project 6 -->
     <div class="project-tile">
