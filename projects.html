@@ -30,7 +30,7 @@
       <img src="Images/RaceTrackIcon.jpeg" alt="Project 1 Icon"
            class="project-main-img" onclick="toggleProjectImage(this)">
       <img src="Images/RaceTrackDescription.png" alt="Project 1 Detail"
-           class="project-detail-img" style="display:none;" onclick="toggleProjectImageBack(this)">
+           class="project-detail-img" style="display:none;">
       <div class="project-title">Race Track Start & Finish Gate</div>
     </div>
 
@@ -39,7 +39,7 @@
       <img src="Images/BasketballGameIcon.jpeg" alt="Project 2 Icon"
            class="project-main-img" onclick="toggleProjectImage(this)">
       <img src="Images/BasketballGameDetails (1).png" alt="Project 2 Detail"
-           class="project-detail-img" style="display:none;" onclick="toggleProjectImageBack(this)">
+           class="project-detail-img" style="display:none;">
       <div class="project-title">Tabletop Basketball Game</div>
     </div>
 
@@ -48,7 +48,7 @@
       <img src="Images/SenseWearIcon1.jpeg" alt="Project 3 Icon"
            class="project-main-img" onclick="toggleProjectImage(this)">
       <img src="Images/SenseWear.png" alt="Project 3  Detail"
-           class="project-detail-img" style="display:none;" onclick="toggleProjectImageBack(this)">
+           class="project-detail-img" style="display:none;">
       <div class="project-title">SenseWear</div>
     </div>
 
@@ -57,7 +57,7 @@
       <img src="Images/heart2.png" alt="Project 4 Icon"
            class="project-main-img" onclick="toggleProjectImage(this)">
       <img src="Images/FatigueAppDetails.png" alt="Project 4  Detail"
-           class="project-detail-img" style="display:none;" onclick="toggleProjectImageBack(this)">
+           class="project-detail-img" style="display:none;">
       <div class="project-title">Physical Fatigue Monitoring App</div>
     </div>
 
@@ -83,7 +83,7 @@
       <img src="Images/SEAP.png" alt="Project 6 Icon"
            class="project-main-img" onclick="toggleProjectImage(this)">
       <img src="Images/SEAPDetails1.png" alt="Project 6 Detail"
-           class="project-detail-img" style="display:none;" onclick="toggleProjectImageBack(this)">
+           class="project-detail-img" style="display:none;">
       <div class="project-title">Linear and Rotational Motor Controller</div>
     </div>
 
@@ -92,35 +92,75 @@
       <img src="Images/FridayNightLightsIcon.png" alt="Project 7 Icon"
            class="project-main-img" onclick="toggleProjectImage(this)">
       <img src="Images/FridayNightLightsDetails.png" alt="Project 7 Detail"
-           class="project-detail-img" style="display:none;" onclick="toggleProjectImageBack(this)">
+           class="project-detail-img" style="display:none;">
       <div class="project-title">Friday Night Lights App</div>
     </div>
   </div>
 
-    <script>
-        function toggleProjectImage(iconElem) {
-        // Get the sibling detail image.
-        const projectTile = iconElem.closest('.project-tile');
-        const detailImg = projectTile.querySelector('.project-detail-img');
+  <script>
+  function toggleProjectImage(iconElem) {
+    const projectTile = iconElem.closest('.project-tile');
 
-        // Create fullscreen overlay
-        const overlay = document.createElement('div');
-        overlay.className = 'fullscreen-img-overlay';
-        // Clone the image node
-        const img = document.createElement('img');
-        img.src = detailImg.src;
-        img.alt = detailImg.alt;
-        // Click to close the overlay
-        overlay.onclick = function() {
-            document.body.classList.remove('fullscreen-open');
-            overlay.remove();
+    // Does this tile have a multi-image wrapper (Project 5)?
+    const detailWrapper = projectTile.querySelector('.project-detail-wrapper');
+    const isMultiImage = !!detailWrapper;
+
+    // Create fullscreen overlay
+    const overlay = document.createElement('div');
+    overlay.className = 'fullscreen-img-overlay';
+
+    if (isMultiImage) {
+      // MULTI-IMAGE PROJECT (Project 5)
+      const clonedWrapper = detailWrapper.cloneNode(true);
+      clonedWrapper.style.display = 'block'; // make it visible in overlay
+
+      // Reattach click handler to the cloned arrow button
+      const arrowBtn = clonedWrapper.querySelector('.project-arrow');
+      if (arrowBtn) {
+        arrowBtn.onclick = function (event) {
+          nextProjectImage(event, arrowBtn);
         };
-        overlay.appendChild(img);
+      }
 
-        document.body.appendChild(overlay);
-        document.body.classList.add('fullscreen-open');
-        }
-    </script>
+      overlay.appendChild(clonedWrapper);
+    } else {
+      // SINGLE-IMAGE PROJECTS (1, 2, 3, 4, 6, 7)
+      const detailImg = projectTile.querySelector('.project-detail-img');
+      const img = document.createElement('img');
+      img.src = detailImg.src;
+      img.alt = detailImg.alt;
+      overlay.appendChild(img);
+    }
+
+    // Click overlay to close (but ignore clicks on the arrow)
+    overlay.onclick = function (e) {
+      if (e.target.classList.contains('project-arrow')) return;
+      document.body.classList.remove('fullscreen-open');
+      overlay.remove();
+    };
+
+    document.body.appendChild(overlay);
+    document.body.classList.add('fullscreen-open');
+  }
+
+  // Handles switching between the two detail images in Project 5
+  function nextProjectImage(event, btn) {
+    event.stopPropagation(); // don't close overlay
+    const wrapper = btn.closest('.project-detail-wrapper');
+    const imgs = wrapper.querySelectorAll('.project-detail-img');
+    let currentIndex = 0;
+
+    imgs.forEach((img, i) => {
+      if (img.classList.contains('active')) {
+        currentIndex = i;
+      }
+    });
+
+    const nextIndex = (currentIndex + 1) % imgs.length;
+    imgs[currentIndex].classList.remove('active');
+    imgs[nextIndex].classList.add('active');
+  }
+</script>
 
 </body>
 </html>

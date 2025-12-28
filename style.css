@@ -10,10 +10,11 @@ h1 {
     font-family: 'Poppins', system-ui, sans-serif;
 }
 h2 {
-  text-align: center;       /* center the text */
-  font-weight: normal;      /* remove bold */
-  margin-top: 0.5rem;
-  margin-bottom: 2rem;
+    text-align: center;       /* center the text */
+    justify-content: center;
+    font-weight: normal;      /* remove bold */
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
 }
 h3 {
     font-size: clamp(20px, 4.5vw, 32px); 
@@ -371,6 +372,37 @@ nav a {
   border-radius: 14px;
   box-shadow: 0 4px 38px rgba(0,0,0,0.34);
   background: #fff;
+}
+/* Multi-image projects (with next button, e.g., Project 5) */
+.fullscreen-img-overlay .project-detail-wrapper {
+  position: relative;  /* needed so arrow can be absolutely positioned */
+}
+
+.fullscreen-img-overlay .project-detail-img {
+  display: none;
+  max-width: 92vw;
+  max-height: 92vh;
+  border-radius: 14px;
+  box-shadow: 0 4px 38px rgba(0,0,0,0.34);
+  background: #fff;
+}
+
+.fullscreen-img-overlay .project-detail-img.active {
+  display: block;
+}
+
+.fullscreen-img-overlay .project-arrow {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  z-index: 1;  /* sits above image */
 }
 /* prevent page scroll while overlay is open */
 body.fullscreen-open { overflow:hidden; }
