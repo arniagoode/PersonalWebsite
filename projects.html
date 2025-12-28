@@ -145,21 +145,29 @@
 
   // Handles switching between the two detail images in Project 5
   function nextProjectImage(event, btn) {
-    event.stopPropagation(); // don't close overlay
-    const wrapper = btn.closest('.project-detail-wrapper');
-    const imgs = wrapper.querySelectorAll('.project-detail-img');
-    let currentIndex = 0;
+  event.stopPropagation(); // don't close overlay
+  const wrapper = btn.closest('.project-detail-wrapper');
+  const imgs = wrapper.querySelectorAll('.project-detail-img');
+  let currentIndex = 0;
 
-    imgs.forEach((img, i) => {
-      if (img.classList.contains('active')) {
-        currentIndex = i;
-      }
-    });
+  imgs.forEach((img, i) => {
+    if (img.classList.contains('active')) {
+      currentIndex = i;
+    }
+  });
 
-    const nextIndex = (currentIndex + 1) % imgs.length;
-    imgs[currentIndex].classList.remove('active');
-    imgs[nextIndex].classList.add('active');
+  const nextIndex = (currentIndex + 1) % imgs.length;
+  imgs[currentIndex].classList.remove('active');
+  imgs[nextIndex].classList.add('active');
+
+  // Move arrow: first image -> right, second image -> left
+  if (nextIndex === 0) {
+    btn.classList.remove('left-side');   // back to first image → right
+  } else {
+    btn.classList.add('left-side');      // second image → left
   }
+}
+
 </script>
 
 </body>

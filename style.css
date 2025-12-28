@@ -404,5 +404,10 @@ nav a {
   cursor: pointer;
   z-index: 1;  /* sits above image */
 }
+/* when on the second image, move arrow to left */
+.fullscreen-img-overlay .project-arrow.left-side {
+  right: auto;
+  left: 10px;
+}
 /* prevent page scroll while overlay is open */
 body.fullscreen-open { overflow:hidden; }
