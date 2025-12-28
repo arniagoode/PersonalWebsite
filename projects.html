@@ -163,8 +163,10 @@
   // Move arrow: first image -> right, second image -> left
   if (nextIndex === 0) {
     btn.classList.remove('left-side');   // back to first image → right
+    btn.textContent = '›';
   } else {
     btn.classList.add('left-side');      // second image → left
+     btn.textContent = '‹';
   }
 }
 
