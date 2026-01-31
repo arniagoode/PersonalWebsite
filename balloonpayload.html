@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>High Altitude Balloon Payload</title>
+
+  <!-- Your existing stylesheet -->
+  <link id="mainStyleSheet" rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* Page wrapper to keep things centered and readable */
+    .project-page-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    .project-header {
+      margin-bottom: 24px;
+    }
+
+    .project-header h1 {
+      margin-bottom: 8px;
+    }
+
+    .project-meta {
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    /* Two-column layout that collapses on mobile */
+    .project-layout {
+      display: grid;
+      grid-template-columns: 2fr 1.5fr;
+      gap: 24px;
+      align-items: flex-start;
+      margin-bottom: 32px;
+    }
+
+    /* Main hero image */
+    .project-hero-img {
+      width: 100%;
+      border-radius: 6px;
+      object-fit: cover;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    /* Side info box */
+    .project-sidebar {
+      background: #f7f7f7;
+      border-radius: 6px;
+      padding: 16px 18px;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .project-sidebar h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    .project-sidebar dl {
+      margin: 0;
+    }
+
+    .project-sidebar dt {
+      font-weight: 600;
+      margin-top: 8px;
+    }
+
+    .project-sidebar dd {
+      margin: 2px 0 0 0;
+    }
+
+    /* Text sections */
+    .project-section {
+      margin-bottom: 28px;
+    }
+
+    .project-section h2 {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+    }
+
+    .project-section p {
+      margin: 0 0 10px;
+      line-height: 1.6;
+    }
+
+    /* Image grid for the remaining 4 images */
+    .project-images-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin-top: 8px;
+      margin-bottom: 28px;
+    }
+
+    .project-images-grid figure {
+      margin: 0;
+    }
+
+    .project-images-grid img {
+      width: 100%;
+      border-radius: 6px;
+      object-fit: cover;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+    }
+
+    .project-images-grid figcaption {
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 6px;
+    }
+
+    /* Make layout stack on small screens */
+    @media (max-width: 768px) {
+      .project-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body class="projects-page">
+  <!-- Social links (same as your other pages) -->
+  <div class="social-links">
+    <a href="https://www.linkedin.com/in/arniagoode/" class="fab fa-linkedin"></a>
+    <a href="https://github.com/arniagoode" class="fab fa-github"></a>
+  </div>
+
+  <!-- Navigation (copied from your existing site) -->
+  <nav>
+    <a href="home.html" class="website-nav">Home</a>
+    <a href="resume.html" class="website-nav">Resume</a>
+    <a href="projects.html" class="website-nav">Projects</a>
+    <a href="presentations.html" class="website-nav">Presentations</a>
+  </nav>
+
+  <div class="project-page-wrapper">
+    <!-- Title + meta -->
+    <header class="project-header">
+      <h1>High Altitude Balloon Payload</h1>
+      <div class="project-meta">
+        Role: Project Lead · Duration: Fall 2024 - Spring 2025 · Team of 10
+      </div>
+    </header>
+
+    <!-- Top layout: hero image + sidebar info -->
+    <section class="project-layout">
+      <div>
+        <img src="Images/YourMainImage.jpg"
+             alt="Main view of the project"
+             class="project-hero-img">
+      </div>
+
+      <aside class="project-sidebar">
+        <h3>Project Overview</h3>
+        <p>
+          Payload, nicknamed Riverhawk, was flown on a University of Maryland 
+          high-altitude balloon flight, reaching an altitude of over 90,000 feet. 
+          The onboard experiments and electronics included an automated robotic arm, 
+          a camera system, and an environmental sensing suite for atmospheric data collection.
+        </p>
+
+        <dl>
+          <dt>Skills</dt>
+          <dd>SolidWorks, KiCAD, Python, CNC Milling</dd>
+
+        </dl>
+      </aside>
+    </section>
+
+    <!-- Text sections -->
+    <section class="project-section">
+      <h2>Problem & Goals</h2>
+      <p>
+        Describe the problem you were trying to solve, the constraints,
+        and any key requirements.
+      </p>
+      <p>
+        Mention the target users, use case, or performance metrics you cared about.
+      </p>
+    </section>
+
+    <section class="project-section">
+      <h2>Design Process</h2>
+      <p>
+        Walk through your process: research, ideation, concept selection,
+        modeling, and iteration.
+      </p>
+      <p>
+        Highlight important design decisions and trade-offs you made along the way.
+      </p>
+    </section>
+
+    <!-- Remaining 4 images in a grid with captions -->
+    <section class="project-section">
+      <h2>Key Images</h2>
+      <div class="project-images-grid">
+        <figure>
+          <img src="Images/YourImage2.jpg" alt="Early concept sketch">
+          <figcaption>Early concept sketches and mechanism ideas.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="Images/YourImage3.jpg" alt="CAD assembly">
+          <figcaption>CAD assembly showing main structural components.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="Images/YourImage4.jpg" alt="Prototype build">
+          <figcaption>Prototype during assembly and testing.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="Images/YourImage5.jpg" alt="Final result">
+          <figcaption>Final build ready for demonstration.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2>Results & Learnings</h2>
+      <p>
+        Summarize the outcome (performance, competition results, feedback)
+        and what you learned technically and personally.
+      </p>
+      <p>
+        You can end with next steps or how this project connects to future work.
+      </p>
+    </section>
+  </div>
+</body>
+</html>
