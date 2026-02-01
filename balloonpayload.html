@@ -32,6 +32,12 @@
       font-size: 0.95rem;
       color: #666;
     }
+    .project-h4 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+      text-align: center;
+    }
     .project-subdescription {
       font-size: 1.2rem;
       color: #666;
@@ -49,7 +55,7 @@
     /* Main hero image */
     .project-hero-img {
       width: 100%;
-      max-height: 310px;
+      max-height: 312px;
       border-radius: 6px;
       object-fit: cover;
       border-radius: 6px;
@@ -70,13 +76,6 @@
       margin-top: 0;
       margin-bottom: 10px;
       font-size: 1rem;
-    }
-
-    .project-sidebar h4 {
-      margin-top: 0;
-      margin-bottom: 10px;
-      font-size: 1.5rem;
-      text-align: center;
     }
 
     .project-sidebar dl {
@@ -139,6 +138,21 @@
         grid-template-columns: 1fr;
       }
     }
+    .project-images-grid img.expanded {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100vw;
+    max-height: 100vh;
+    object-fit: contain;        /* whole image visible */
+    z-index: 9999;
+    background: rgba(0,0,0,0.94);
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+    }
   </style>
 </head>
 <body class="projects-page">
@@ -194,7 +208,9 @@
 
     <!-- Remaining 4 images in a grid with captions -->
     <section class="project-section">
-      <h4>Key Images</h4>
+      <div class="project-h4">
+        Images
+      </div>
       <div class="project-subdescription">
         (Click on image to expand)
       </div>
