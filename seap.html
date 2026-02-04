@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linear and Rotational Motor Controller</title>
+
+  <!-- Your existing stylesheet -->
+  <link id="mainStyleSheet" rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* Page wrapper to keep things centered and readable */
+    .project-page-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    .project-header {
+      margin-bottom: 24px;
+    }
+
+    .project-header h1 {
+      margin-bottom: 8px;
+      font-size: 38px;
+    }
+
+
+    .project-meta {
+      font-size: 0.95rem;
+      color: #666;
+    }
+    .project-h4 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+    .project-subdescription {
+      font-size: 1.2rem;
+      color: #666;
+      text-align: center;
+    }
+
+    /* Two-column layout that collapses on mobile */
+    .project-layout {
+      display: grid;
+      grid-template-columns: 2fr 1.5fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    /* Main hero image */
+    .project-hero-img {
+      width: 100%;
+      max-height: 800px;
+      border-radius: 6px;
+      object-fit: cover;
+      border-radius: 6px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      display: block;
+    }
+
+    /* Side info box */
+    .project-sidebar {
+      background: #f7f7f7;
+      border-radius: 6px;
+      padding: 16px 18px;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .project-sidebar h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    .project-sidebar dl {
+      margin: 0;
+    }
+
+    .project-sidebar dt {
+      font-weight: 600;
+      margin-top: 8px;
+    }
+
+    .project-sidebar dd {
+      margin: 2px 0 0 0;
+    }
+
+    /* Text sections */
+    .project-section {
+      margin-bottom: 28px;
+    }
+
+    .project-section h2 {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+    }
+
+    .project-section p {
+      margin: 0 0 10px;
+      line-height: 1.6;
+    }
+
+    /* Image grid for the remaining 4 images */
+    .project-images-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin-top: 8px;
+      margin-bottom: 28px;
+    }
+
+    .project-images-grid figure {
+      margin: 0;
+    }
+
+    .project-images-grid img {
+      width: 100%;
+      height: 300px;       /* or whatever height your 3 “good” images are */
+      object-fit: cover;   /* crop to fill the box */
+      border-radius: 6px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+    }
+
+
+    .project-images-grid figcaption {
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 6px;
+    }
+
+    /* Make layout stack on small screens */
+    @media (max-width: 768px) {
+      .project-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+    .project-images-grid img.expanded {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100vw;
+    max-height: 100vh;
+    object-fit: contain;        /* whole image visible */
+    z-index: 9999;
+    background: rgba(0,0,0,0.94);
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+    }
+  </style>
+</head>
+<body class="projects-page">
+  <!-- Social links (same as your other pages) -->
+  <div class="social-links">
+    <a href="https://www.linkedin.com/in/arniagoode/" class="fab fa-linkedin"></a>
+    <a href="https://github.com/arniagoode" class="fab fa-github"></a>
+  </div>
+
+  <!-- Navigation (copied from your existing site) -->
+  <nav>
+    <a href="home.html" class="website-nav">Home</a>
+    <a href="resume.html" class="website-nav">Resume</a>
+    <a href="projects.html" class="website-nav">Projects</a>
+    <a href="presentations.html" class="website-nav">Presentations</a>
+  </nav>
+
+  <div class="project-page-wrapper">
+    <!-- Title + meta -->
+    <header class="project-header">
+      <h1>Linear and Rotational Motor Controller</h1>
+      <div class="project-meta">
+        Role: Highschool Student Researcher <br>
+        Duration: Summer 2023
+      </div>
+    </header>
+
+    <!-- Top layout: hero image + sidebar info -->
+    <section class="project-layout">
+      <div>
+        <img src="Images/SEAP.png"
+             alt="Main view of the project"
+             class="project-hero-img">
+      </div>
+
+      <aside class="project-sidebar">
+        <h3>Project Overview</h3>
+        <p>
+         Designed and built a custom controller for a dual-axis motor system integrating 
+         both linear and rotational movements. The system precisely translated and rotated a 
+         tensioned optical fiber while synchronizing motion with an Aerosol Jet Printer head, 
+         enabling accurate deposition of ink to produce spiral patterns around the fiber.
+        </p>
+
+        <dl>
+          <dt>Skills Developed</dt>
+          <dd>SolidWorks, Arduino IDE, C++, 3D printing, Soldering</dd>
+
+        </dl>
+      </aside>
+    </section>
+
+  </div>
+</body>
+</html>
