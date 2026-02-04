@@ -3,7 +3,7 @@
 /* H1 style */
 h1 { 
     display: flex;  
-    margin-top: 80px; 
+    margin-top: 60px; 
     text-align: center; 
     justify-content: center; 
     font-size: clamp(32px, 8vw, 90px); 
