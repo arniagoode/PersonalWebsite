@@ -346,6 +346,24 @@ nav a {
   .glass {
     max-width: 100%;
   }
+
+  .qualif-img {
+    width: 100%;
+    padding: 0 12px;
+    box-sizing: border-box;
+  }
+
+  .qualif-img a {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .qualif-img img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
 }
 @media (min-width: 651px) {
   body {
