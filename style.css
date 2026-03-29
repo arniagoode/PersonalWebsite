@@ -122,6 +122,11 @@ nav a {
     max-width: 400px;
 }
 
+.glass h3 {
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
 
 
 /* HOME HTML PAGE */
