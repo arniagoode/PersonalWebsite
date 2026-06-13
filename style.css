@@ -434,3 +434,26 @@ nav a {
 }
 /* prevent page scroll while overlay is open */
 body.fullscreen-open { overflow:hidden; }
+.table-wrap {
+  width: 100%;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+.clean-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.clean-table th,
+.clean-table td {
+  padding: 16px 20px;
+  text-align: left;
+  vertical-align: top;
+  word-wrap: break-word;
+}
+
+.clean-table thead th {
+  border-bottom: 2px solid #ccc;
+}
